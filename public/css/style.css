@@ -1,0 +1,25 @@
+body .login{
+    height: 100vh;
+    align-content: center;
+    background-image: url('/assets/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body{
+    height: 100vh;
+    align-content: center;
+    background-color: rgb(207, 223, 255);
+}
+.login .container{
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+}
+.container{
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 500px;
+    min-height: 400px;
+    padding: 40px;
+    border-radius: 20px;
+}

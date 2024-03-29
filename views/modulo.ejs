@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modulos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Sistema de Matrículas</h1>
+        <hr>
+
+        <h3>Curso seleccionado:</h3>
+        <p><strong>Curso:</strong> <%= curso %></p>
+
+        <h3>Marca módulo a llevar:</h3>
+        <form action="/pago" method="post">
+            <input type="hidden" name="curso" value="<%= curso %>">
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="modulo" id="modulo1" value="Básico">
+                <label class="form-check-label" for="Básico">Básico</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="modulo" id="modulo2" value="Intermedio">
+                <label class="form-check-label" for="Intermedio">Intermedio</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="modulo" id="modulo3" value="Avanzado">
+                <label class="form-check-label" for="Avanzado">Avanzado</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Continuar</button>
+
+        </form>
+        <script>
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        checkboxes.forEach((otherCheckbox) => {
+                            if (otherCheckbox !== this) {
+                                otherCheckbox.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
+        
+            // Marcar el primer checkbox predeterminadamente
+            checkboxes[0].checked = true;
+        </script>
+    </div>
+</body>
+</html>
